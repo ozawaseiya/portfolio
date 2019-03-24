@@ -1,0 +1,455 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+section, article, aside, hgroup, header, footer, nav, figure {
+    display: block;
+    width: 100%;
+}
+li img {
+    display: block;
+}
+a img {
+    border: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+li {
+    list-style-type: none;
+}
+#headerInner {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 150px;
+    clear: both;
+}
+#mainPhoto {
+    width: 25%;
+    height: 100%;
+    float: left;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+#mainPhoto:hover {
+    opacity: 0.7;
+}
+#mainMotto {
+    width: 30%;
+    height: 30%;
+    float: left;
+    margin-left: 10px;
+    margin-top: 80px;
+}
+#hamburgar {
+    width: 70px;
+    height: 70px;
+    float: right;
+    margin-left: 40px;
+    margin-top: 25%;
+}
+#navDrawer {
+}
+/*チェックボックス等は非表示に*/
+.navUnshown {
+    display: none;
+}
+/*アイコンのスペース*/
+#navOpen {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+}
+/*ハンバーガーアイコンをCSSだけで表現*/
+#navOpen span, #navOpen span:before, #navOpen span:after {
+    position: absolute;
+    height: 4px;/*線の太さ*/
+    width: 30px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+#navOpen span:before {
+    bottom: -8px;
+}
+#navOpen span:after {
+    bottom: -16px;
+}
+#navClose {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+/*中身*/
+#navContent {
+    overflow: hidden;
+    position: fixed;
+    top: 105px;
+    right: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 240px;/*最大幅（調整してください）*/
+    height: 192px;
+    background: #5db860;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    transform: translateX(105%);/*右に隠しておく*/
+}
+#navContent {
+    background-color: #f58701;
+    border-top: solid 3px #CC7000;
+    border-bottom: solid 3px #CC7000;
+    border-right: solid 3px #CC7000;
+    border-left: solid 3px #CC7000;
+}
+#contentInner li {
+    height: 45px;
+    border-bottom: solid 3px #CC7000;
+}
+#contentInner li a p {
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 18px;
+}
+/*チェックが入ったらもろもろ表示*/
+#navInput:checked ~ #navClose {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+#navInput:checked ~ #navContent {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+#shoppingCartZone {
+    display: none;
+}
+#gnav {
+    clear: both;
+    width: 100%;
+    height: 246px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+#gNavi {
+    width: 100%;
+    height: 246px;
+    overflow: hidden;
+    background: #5db860;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+#gnav #gNavi #indexPage {
+    display: none;
+}
+#gNavi li {
+    list-style: none;
+    width: 100%;
+    height: 60px;
+    float: left;
+    border-top: solid 2px #53a756;
+    border-bottom: solid 2px #53a756;
+    border-right: solid 2px #53a756;
+    border-left: solid 2px #53a756;
+}
+#gNavi li a {
+    display: block;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+}
+#gNavi li:hover {
+    background: #90ee90;
+}
+#gnav > ul {
+    display: table;
+}
+#gnav > ul > li {
+    display: table-cell;
+}
+#gnav > ul > li:hover {
+    color: #fff;
+    background-color: #90ee90;
+}
+#gnav > ul > li:hover > a {
+    color: #fff;
+}
+.menu {
+    display: none;
+}
+.breadList {
+    display: none;
+}
+span {
+    color: #525252;
+}
+#logOut {
+    display: none;
+}
+#section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 480px;
+    height: 380px;
+}
+section div a {
+    width: 100%;
+}
+section div a img {
+    width: 100%;
+}
+aside {
+    z-index: 1;
+    position: relative;
+    margin-top: 200%;
+    max-width: 252px;
+    width: 100%;
+    max-height: 850px;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+aside p {
+    color: #525252;
+}
+#shiawaseZoneBase {
+    width: 100%;
+    max-width: 252px;
+    height: 252px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ebf7f6;
+    border-top: solid 2px #808080;
+    border-bottom: solid 2px #808080;
+    border-right: solid 2px #808080;
+    border-left: solid 2px #808080;
+    float: left;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+#shiawaseZone {
+    width: 80%;
+    height: 50px;
+    background-color: #ebf7f6;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#shiawaseZone img {
+    margin-top: 10px;
+}
+#shiawaseButton {
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #5db860;
+    text-align: center;
+    text-decoration: none;
+    border-top: solid 3px #53a756;
+    border-bottom: solid 3px #53a756;
+    border-right: solid 3px #53a756;
+    border-left: solid 3px #53a756;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+#shiawaseButton:hover {
+    background: #90ee90;
+}
+#contactZoneBase {
+    width: 100%;
+    max-width: 252px;
+    height: 252px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ebf7f6;
+    border-top: solid 2px #808080;
+    border-bottom: solid 2px #808080;
+    border-right: solid 2px #808080;
+    border-left: solid 2px #808080;
+    float: left;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+#contactZone {
+    width: 100%;
+    height: 220px;
+    background-color: #ebf7f6;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#contactZone p {
+    font-size: 18px;
+    font-weight: bold;
+}
+#contactBoard {
+    width: 100%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: #ebf7f6;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 5px;
+}
+#contactBoard p {
+    margin-top: 15px;
+}
+#contactInfo {
+    height: 170px;
+    margin-top: 20px;
+}
+#twitterZoneBase {
+    width: 100%;
+    max-width: 252px;
+    height: 252px;
+    text-align: center;
+    background-color: #ebf7f6;
+    text-decoration: none;
+    border-top: solid 2px #808080;
+    border-bottom: solid 2px #808080;
+    border-right: solid 2px #808080;
+    border-left: solid 2px #808080;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+#twitterZone {
+    width: 100%;
+    height: 220px;
+    background-color: #ebf7f6;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#twitterZone img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+#twitterFollow a img:hover {
+    opacity: 0.7;
+}
+#twitterBoard {
+    width: 100%;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: #ebf7f6;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 5px;
+}
+#twitterBoard p {
+    margin-top: 8px;
+    font-weight: bold;
+}
+#twitterInfo {
+    height: 200px;
+    margin-top: 40px;
+}
+#twitterFollow a img {
+    width: 60%;
+}
+#contents {
+    position: absolute;
+    top: 472px;
+    left: 0;
+    width: 100%;
+    max-width: 480px;
+    height: 365px;
+    background-color: #fffaf0;
+    margin-bottom: 15px;
+}
+#frameZone {
+    width: 100%;
+    max-width: 480px;
+    height: 240px;
+    margin-top: 25px;
+}
+#frame {
+    width: 100%;
+    max-width: 480px;
+}
+#frame a img:hover {
+    opacity: 0.8;
+}
+#campaign {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+#ranking {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #434343;
+}
+footer {
+    background-color: #5db860;
+    height: 120px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    clear: both;
+}
+#footerInner {
+    padding-top: 20px;
+    width: 85%;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#footerInner a {
+    margin-right: 15px;
+    color: white;
+}
+#footerInner a:hover {
+    background: #90ee90;
+}
+body,html {
+    background-color: #fffaf0;
+    max-width:100%;
+    overflow:hidden;
+}
