@@ -1,0 +1,642 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+section, article, aside, hgroup, header, footer, nav, figure {
+    display: block;
+}
+li img {
+    display: block;
+}
+a img {
+    border: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+li {
+    list-style-type: none;
+}
+#menu {
+    display: none;
+}
+.loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    z-index: 9999;
+}
+.animation {
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: lodanimetion 1500ms ease-out forwards infinite;
+}
+@keyframes lodanimetion {
+ from, to {
+ opacity: 0.3;
+}
+ 60% {
+ opacity:1;
+}
+}
+.animation img {
+    max-width: 90%;
+    max-height: 90%;
+    float: left;
+    filter: invert(100%);
+}
+.animation p {
+    float: right;
+    color: #bdbdbd;
+    margin-top: 5px;
+    font-size: 15px;
+}
+header {
+    width: 100%;
+    height: 100px;
+}
+#hamburgar {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+#navDrawer {
+}
+/*チェックボックス等は非表示に*/
+.navUnshown {
+    display: none;
+}
+/*アイコンのスペース*/
+#navOpen {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+}
+/*ハンバーガーアイコンをCSSだけで表現*/
+#navOpen span, #navOpen span:before, #navOpen span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+#navOpen span:before {
+    bottom: -8px;
+}
+#navOpen span:after {
+    bottom: -16px;
+}
+/*閉じる用の薄黒カバー*/
+#navClose {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+/*中身*/
+#navContent {
+    overflow: hidden;
+    position: fixed;
+    top: 105px;
+    right: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 200px;/*最大幅（調整してください）*/
+    height: 55%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    transform: translateX(105%);/*右に隠しておく*/
+}
+/*チェックが入ったらもろもろ表示*/
+#navInput:checked ~ #navClose {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+#navInput:checked ~ #navContent {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+#titleBox {
+    width: 100%;
+    height: 75px;
+}
+#mainTitle {
+    width: 210px;
+    height: 35px;
+    margin-left: 40px;
+    margin-top: 25px;
+}
+#companyLogo {
+    float: left;
+}
+#companyLogo img {
+    width: 80%;
+    height: 80%;
+    z-index: 0;
+    transform: rotate(360deg);
+    animation: rotate_anime 20s;
+}
+@keyframes rotate_anime {
+ 0% {
+ transform:rotate(0deg);/* アニメーションの進みが0%の時の状態 */
+ -webkit-transform: rotate(0deg);
+}
+ 100% {
+ transform:rotate(360deg);/* アニメーションの進みが100%の時の状態 */
+ -webkit-transform: rotate(360deg);
+}
+}
+#title1 {
+    z-index: 1;
+}
+#title2 {
+    margin-bottom: 8px;
+    z-index: 1;
+}
+#title1 p {
+    font-size: 14px;
+    color: #292929;
+    font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
+}
+#title2 p {
+    font-size: 14px;
+    color: #292929;
+    font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
+}
+#menu1 {
+    width: 100px;
+    height: 20px;
+}
+#menu1 p {
+    float: left;
+    font-size: 24px;
+    margin-left: 60px;
+    margin-top: 25px;
+    color: #333;
+    font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
+}
+#contents {
+    width: 100%;
+    height: auto;
+    min-height: 3830px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.fadein {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 300ms;
+}
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+#logo {
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    min-height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    background-repeat: no-repeat;
+}
+#profileBefore {
+    width: 100%;
+    height: 50px;
+}
+#profile {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#profileTitle {
+    width: 40px;
+    height: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#profileTitle p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+}
+#profileInfo {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 210px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: solid 2px #171b1f;
+    border-bottom: solid 2px #171b1f;
+}
+#profileData {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 210px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#profileData p {
+    color: #292929;
+}
+.info {
+    margin-top: 8px;
+}
+.sentence1 {
+    margin-top: 8px;
+}
+.sentence2 {
+    margin-top: 12px;
+}
+#frame1 {
+    width: 100%;
+    height: 160px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("portfolioPhoto/favorite3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#favoriteBefore {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+}
+#favorite {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 860px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#favoriteTitle {
+    width: 50px;
+    height: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#favoriteTitle p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+}
+#favoriteInfo {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 815px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: solid 2px #171b1f;
+    border-bottom: solid 2px #171b1f;
+}
+#favoriteData {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 145px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#favoriteData p {
+    color: #292929;
+}
+#favoritePhoto {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    min-height: 580px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#kolkata {
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+}
+#kolkata img {
+    width: 100%;
+    max-width: 300px;
+}
+#kolkata p {
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+}
+#tokaido {
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+}
+#tokaido img {
+    width: 100%;
+    max-width: 300px;
+}
+#tokaido p {
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+}
+#favoritePhoto p {
+    margin-top: 14px;
+    color: #333;
+}
+#favoritePhoto img {
+    margin-top: 10px;
+}
+#frame2 {
+    width: 100%;
+    height: 160px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("portfolioPhoto/skill3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#skillBefore {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+}
+#skill {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 430px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillTitle {
+    width: 30px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillTitle p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillInfo {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 245px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    border-top: solid 2px #171b1f;
+    border-bottom: solid 2px #171b1f;
+}
+#skillData {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 480px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillDataMessage {
+    width: 100%;
+    max-width: 310px;
+    word-break: break-all;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillData p {
+    color: #292929;
+}
+.boldTitle1 {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline;
+}
+.boldTitle2 {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline;
+}
+#frame3 {
+    width: 100%;
+    height: 160px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("portfolioPhoto/works3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#worksBefore {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+}
+#works {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 1060px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#worksTitle {
+    width: 30px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#worksTitle p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+}
+#worksInfo {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 1010px;
+    padding-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: solid 2px #171b1f;
+    border-bottom: solid 2px #171b1f;
+}
+#worksSentence {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#workSentence1 {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 140px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#workSentence2 {
+    width: 100%;
+    max-width: 310px;
+    height: 100%;
+    min-height: 140px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#worksData {
+    height: 100%;
+    min-height: 570px;
+    width: 100%;
+    max-width: 310px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#worksData p {
+    color: #292929;
+}
+#productscreen {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    min-height: 240px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+}
+#productscreen img {
+    width: 100%;
+    max-width: 300px;
+}
+#productscreen p {
+    width: 100%;
+    max-width: 160px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+#adminscreen {
+    width: 100%;
+    max-width: 300px;
+    height: 240px;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#adminscreen img {
+    width: 100%;
+    max-width: 400px;
+}
+#adminscreen p {
+    width: 100%;
+    max-width: 190px;
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+footer {
+    background-color: #f7f7f7;
+    height: 120px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    padding-top: 20px;
+    clear: both;
+}
+#footerInner {
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#footerInner p {
+    color: #292929;
+    margin-right: 10px;
+    font-weight: bold;
+}
+#contact {
+    font-weight: bold;
+}
+#topBack {
+    float: right;
+    clear: both;
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 10px;
+}
+#topBack {
+    color: #292929;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+a:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+p {
+    font-size: 14px;
+    color: #292929;
+    font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
+}
+body {
+  box-sizing : border-box;
+}
