@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -10,7 +10,13 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 ?>
 <!doctype html>
 <html lang="ja">
-<head>
+<head><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WN5NLKS');</script>
+<!-- End Google Tag Manager -->
 	<meta charset="UTF-8N">
 	<meta name="description" content="これはショッピングサイト東三河幸せ宅配便のサイトです。このショッピングサイトは愛知県内の東三河地方（豊橋市、豊川市、蒲郡市、新城市、田原市、設楽町、東栄町、豊根村）のお客様を対象にしています。私たちは東三河地方の方々に地元のおいしいお菓子・ジュースをお届けしたいと思い、ネット通販サービスを日々提供しております。当サイトが取り扱っている商品は全て地元の食材であり、地元の業者が加工しております。">
 	</div>
@@ -22,7 +28,10 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 	<link rel="stylesheet" type="text/css" href="slickBox/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slickBox/slick/slick-theme.css"/>
 </head>
-<body>
+<body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN5NLKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<header>
 		<div id="headerInner">
 			<a href="#"><img src="../common/logo.png" alt="東三河幸せ宅配便" id="mainPhoto"></a>
@@ -95,9 +104,9 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 					<a href="#" itemprop="url">
       <span itemprop="最初のページ">最初のページ</span>
     </a>
-				
+	</li>			
 
-
+<li>
 					<?php
 					if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 						print '<div id="logOut"><a href="../login/memberLogin/memberLogout.php"><p>ログアウトする</p></a></div>';

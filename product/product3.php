@@ -8,8 +8,20 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 ?>
 <!doctype html>
 <html lang="ja">
-<head>
+<head><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WN5NLKS');</script>
+<!-- End Google Tag Manager -->
 	<meta charset="UTF-8N">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@shiawasetakuhai">
+        <meta property="og:url" content="https://aichi1990.xsrv.jp/product/product3.php">
+        <meta property="og:title" content="新商品紹介">
+        <meta property="og:description" content="設楽若松屋から新商品「岡崎味噌まんじゅう」（120円税込）が11月20日に発売されました。是非お買い求めください！詳しくは弊社ホームページまで。">
+        <meta property="og:image" content="https://aichi1990.xsrv.jp/common/mainPhotookazakimiso.jpg">
 	<title>和菓子・洋菓子</title>
 	<link href="1style3.css" rel="stylesheet" type="text/css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
@@ -18,7 +30,10 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 	<script src="1script3.js"></script>
 </head>
 
-<body>
+<body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN5NLKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<header>
 		<div id="headerInner">
 			<a href="../index/index.php"><img src="../common/logo.png" alt="東三河幸せ宅配便" id="mainPhoto"></a>

@@ -163,6 +163,7 @@ li {
 }
 span {
     color: #525252;
+    float:left;
 }
 #logOut {
     float: right;
