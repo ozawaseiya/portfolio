@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</tr>
 				<tr>
 					<th>価格</th>
-					<td>:980円(税込価格)</td>
+					<td>:980円(うち消費税額78円)</td>
 				</tr>
 				<tr>
 					<th>容量</th>

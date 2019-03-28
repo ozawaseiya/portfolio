@@ -72,11 +72,12 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 					}
 					print '<table>';
 					print '<tr>';
-					print '<th class="wide">選択</th><th>商品名</th><th>販売店名</th><th>価格</th><th>画像</th>';
+					print '<th class="wide">選択</th><th class="wide">商品番号</th><th>商品名</th><th>販売店名</th><th>価格</th><th>画像</th>';
 					print '</tr>';
 					print '<tr>';
 					print '<td><input type="radio" name="code" value="' . $rec[ 'code' ] . '"></td>';
-					print '<td>' . $rec[ 'productname' ] . '</td>';
+                                        print '<td class="wide" align="center">' . $rec[ 'code' ] . '</td>';
+                                        print '<td>' . $rec[ 'productname' ] . '</td>';
 					print '<td>' . $rec[ 'companyname' ] . '</td>';
 					print '<td class="wide">' . $rec[ 'price' ] . '円' . '</td>';
 					$rec[ 'imagecart' ] = '<img src="../../../common/' . $rec[ 'imagecart' ] . '">';

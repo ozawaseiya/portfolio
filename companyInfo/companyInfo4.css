@@ -343,7 +343,7 @@ aside p {
 }
 #contents {
     width: 750px;
-    height: 880px;
+    height: 910px;
     background-color: #fffaf0;
     float: right;
 }
@@ -375,7 +375,7 @@ aside p {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 600px;
-    height: 650px;
+    height: 710px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -396,7 +396,7 @@ aside p {
     height: 60px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 #serviceButton {
     width: 220px;

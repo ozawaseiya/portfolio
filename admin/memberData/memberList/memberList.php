@@ -57,7 +57,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 				$dbh = new PDO( $dsn, $user, $password );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-				$sql = 'SELECT code,password,kanji,furigana,tel,email1,postal1,postal2,prefecture,address FROM dat_member WHERE 1';
+				$sql = 'SELECT code,date,password,kanji,furigana,tel,email1,postal1,postal2,prefecture,address FROM dat_member WHERE 1';
 				$stmt = $dbh->prepare( $sql );
 				$stmt->execute();
 
@@ -78,7 +78,8 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 					print '⑤〒' . $rec[ 'postal1' ];
 					print '-' . $rec[ 'postal2' ];
 					print '&nbsp;⑥都道府県名:' . $rec[ 'prefecture' ] . '<br/>';
-					print '⑦住所:' . $rec[ 'address' ];
+					print '⑦住所:' . $rec[ 'address' ] . '<br/>';
+                                        print '⑧登録日時:' . $rec[ 'date' ];
 					print '<br/><br/>';
 				}
 				print '<div id="buttonZone">';

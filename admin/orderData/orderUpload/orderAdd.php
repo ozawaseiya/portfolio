@@ -157,9 +157,9 @@ $orderquantity = $_SESSION[ 'cnt' ];
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
 	<script>
-		$( function () {
+			$( function () {
 			$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-			$( "#inputDate" ).datepicker();
+			$( "#inputDate" ).datepicker({minDate:'+1d'});
 		} );
 	</script>
 </body>

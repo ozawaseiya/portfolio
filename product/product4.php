@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</tr>
 				<tr>
 					<th>価格</th>
-					<td>:210円(税込価格)</td>
+					<td>:210円(うち消費税額17円)</td>
 				</tr>
 				<tr>
 					<th>容量</th>

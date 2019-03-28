@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 	print 'ログインされていません。<br/>';
@@ -70,8 +70,9 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 						break;
 					}
 					print '<input type="radio" name="code" value="' . $rec[ 'code' ] . '">';
-					print $rec[ 'name' ];
-					print '<br/>';
+                                        print '管理者番号:'.$rec[ 'code' ];
+					print '&nbsp;&nbsp管理者名:'.$rec[ 'name' ];
+					print '<br/><br/>';
 				}
 				print '<div id="buttonZone">';
 				print '<input type="submit" id="button1" name="add" value="追加する">';

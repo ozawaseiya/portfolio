@@ -170,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script>
 		$( function () {
 			$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-			$( "#inputDate" ).datepicker();
+			$( "#inputDate" ).datepicker({minDate:'+1d'});
 		} );
 	</script>
 </body>

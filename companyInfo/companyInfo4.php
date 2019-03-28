@@ -138,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<br/>
 						<br/> 5.注文完了となります。
 						<br/>
-						<br/> 6.指定した日時に注文商品が届きます。
+						<br/> 6.指定した日時に注文商品が届きます。(交通事情及び配送作業の都合等によりお客様のご希望日時に商品をお届けできない場合がございます。ご了承ください。)
 					</p>
 				</div>
 				<div id="servicePhoto">

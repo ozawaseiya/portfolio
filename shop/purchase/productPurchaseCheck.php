@@ -252,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					print '<input type="submit" class="backButton" value="前のページへ戻る">';
 					print '</form>';
 				} else {
-					if ( isset( $_POST[ 'pay' ] ) && $_POST[ 'pay' ] == 'card' && preg_match( "([0-9]{16})", $cardnumber ) == false ) {
+						if ( isset( $_POST[ 'pay' ] ) && $_POST[ 'pay' ] == 'card' && preg_match( "([0-9]{16})", $cardnumber ) == false ) {
 						print '*カード番号を正確に入力してください。';
 						print '<form method="post" action="productPurchaseInfoInput.php">';
 						print '<input type="submit" class="backButton" value="前のページへ戻る">';
