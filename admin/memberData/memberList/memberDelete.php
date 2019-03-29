@@ -79,12 +79,10 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 				exit();
 			}
 			?>
-			<?php print '会員番号'.$code; ?>
-			<br/><br/> 会員登録者名
-			<br/>
+			<?php print '会員番号:'.$code; ?>
+			<br/><br/> 会員登録者名:
 			<?php print $namekanji; ?>
-			<br/><br/> 会員登録者名（ふりがな）
-			<br/>
+			<br/><br/> 会員登録者名（ふりがな):
 			<?php print $namefurigana; ?>
 			<br/><br/> この管理者を削除してよろしいですか？
 			<br/>

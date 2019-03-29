@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</tr>
 				<tr>
 					<th>価格</th>
-					<td>:130円(うち消費税額10円)</td>
+					<td>:130円 (うち消費税額10円)</td>
 				</tr>
 				<tr>
 					<th>容量</th>

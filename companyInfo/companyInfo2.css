@@ -397,6 +397,9 @@ aside p {
 #kidokoro img {
     margin-left: 10px;
 }
+.customerMessage{
+    margin-top: 10px;
+}
 #backButtonZone {
     width: 470px;
     height: 60px;

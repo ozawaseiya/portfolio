@@ -198,7 +198,7 @@ header {
 #contents {
     width: 100%;
     height: auto;
-    min-height: 3830px;
+    min-height: 3800px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -249,7 +249,7 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 210px;
+    min-height: 240px;
     margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
@@ -317,7 +317,7 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 815px;
+    min-height: 805px;
     margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
@@ -398,9 +398,10 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 430px;
+    min-height: 440px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 15px;
 }
 #skillTitle {
     width: 30px;
@@ -419,10 +420,10 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 245px;
+    min-height: 230px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-top: solid 2px #171b1f;
     border-bottom: solid 2px #171b1f;
 }
@@ -431,7 +432,7 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 480px;
+    min-height: 440px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -495,7 +496,7 @@ header {
     width: 100%;
     max-width: 310px;
     height: 100%;
-    min-height: 1010px;
+    min-height: 960px;
     padding-top: 30px;
     margin-right: auto;
     margin-left: auto;
@@ -530,7 +531,7 @@ header {
 }
 #worksData {
     height: 100%;
-    min-height: 570px;
+    min-height: 545px;
     width: 100%;
     max-width: 310px;
     margin-right: auto;
