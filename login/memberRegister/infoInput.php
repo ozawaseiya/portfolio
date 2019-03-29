@@ -115,7 +115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div id="mailadress">
 					<p>メールアドレス(半角英数字）</p>
 					<span class="attention">[必須]</span>
-					<input class="text" type="email" name="email1" id="email_1" size="40" placeholder="sample@shiawase.co.jp" maxlength="40" required>
+					<input class="text" type="email" name="email1" id="email_1" size="40" placeholder="sample@shiawase.co.jp" maxlength="40" required><br/><br/>
 					<p id=adressMessage>＊確認のためにもう一度メールアドレスを入力してください</p><span class="attention">[必須]</span>
 					<div id="inputCheck"><input class="text" type="text" name="email2" id="emailConfirm_1" size="40" oninput="CheckEmail_1(this)" maxlength="40" required>
 					</div>

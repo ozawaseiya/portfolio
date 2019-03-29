@@ -246,10 +246,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				$content .= "-------------------------------------------";
 
 				$headers = <<<HEAD
-From : ozawa@aichi1990.xsrv.jp //送信元メールアドレス
-Return-Path: ozawa@aichi1990.xsrv.jp //送信元メールアドレス
-Content-Type: text/plain;charset=ISO-2022-JP
-HEAD;
+				From : ozaworld.s2090227.1990@gmail.com //送信元メールアドレス
+				Return-Path: ozaworld.s2090227.1990@gmail.com //送信元メールアドレス
+				Content-Type: text/plain;charset=ISO-2022-JP
+				HEAD;
 
 				mb_send_mail( $mailto, $subject, $content, $headers );
 

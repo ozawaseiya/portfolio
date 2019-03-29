@@ -73,11 +73,9 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			}
 
 
-			?> 管理者番号
-			<br/>
+			?> 管理者番号:
 			<?php print $staffcode; ?>
-			<br/><br/> 管理者名
-			<br/>
+			<br/> 管理者名:
 			<?php print $staffname; ?>
 			<br/><br/> この管理者を削除してよろしいですか？
 			<br/>
