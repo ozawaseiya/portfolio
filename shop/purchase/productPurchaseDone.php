@@ -231,8 +231,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 				$mailto = $post[ 'email' ]; //宛先メールアドレス
-				$subject = "～東三河幸せ宅配便～ご注文ありがとうございます。";
-
+				$subject = "～東三河幸せ宅配便～ご注文ありがとうございます";
+                                $subject .= ":".date('Y/m/d');
 				$content = $name;
 
 				$content .= "様";
