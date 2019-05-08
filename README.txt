@@ -1,7 +1,8 @@
+﻿
 # portfolio(name of repository)
 1.SEIYA OZAWAポートフォーリオページ（Profile[自己紹介と経歴],Favorite[趣味と興味],Skill[このWebシステムを作成するのに使用した技能],Works[作成した2つのWebシステムの紹介]）
 2.東三河幸せ宅配便サイト: 愛知県東三河地域に居住している仕事や家事、介護等で忙しい５０代以上の主婦を対象としたローカルショッピングサイト
-3.東三河幸せ宅配便管理サイト: ショッピングサイト運営者用の管理サイトを想定して作成されており、サイト経由の注文内容、お客様からの電話やメールで受け取った注文内容などをサイト運営者がご自身で管理できるサイト
+3.東三河幸せ宅配便管理サイト: ショッピングサイト運営者用の管理サイトを想定して作成されており、サイト経由の注文内容、お客様からの電話やメールで受け取ったご注文内容などをサイト運営者がご自身で管理できるサイト
 
 # Dependency
 Photoshop2019, Illustrator2019, Dreamweaver2019, HTML5, CSS3, Javascript, PHP ver-7.2.14, MYSQL ver-5.7.16
@@ -18,7 +19,9 @@ Webシステム機能一覧
 3.東三河幸せ宅配便管理サイト:1管理者ログイン機能,2管理者閲覧・追加・削除機能,3会員登録閲覧・追加・削除機能,4お問い合わせ閲覧・追加・削除機能,5商品管理情報閲覧・追加・削除機能,6注文管理情報閲覧・詳細確認・追加・買い物かご・削除機能
 
 # Licence
+Copyright (c) 2019 Seiya Ozawa
 This software is released under the MIT License, see LICENSE.
+https://opensource.org/licenses/mit-license.php
 
 # Authors
 谷藤賢一,インターネットアカデミー講師
