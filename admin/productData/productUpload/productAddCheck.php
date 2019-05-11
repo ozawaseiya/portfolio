@@ -78,11 +78,11 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			}
 
 			if ( preg_match( '/\A[0-9]+\z/', $productprice ) == 0 ) {
-				print '価格をきちんと入力してください。<br/>';
+				print '価格を正しく入力してください。<br/>';
 			} else {
 				print '価格：';
 				print $productprice;
-				print '円<br/><br/>';
+				print '円<br/><br/><br/>';
 			}
 
 			if ( $productimage[ 'size' ] > 0 ) {

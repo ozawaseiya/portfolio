@@ -44,7 +44,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 	</header>
 	<div id="contents">
 		<div id="mainTitle">
-			<p>お問い合わせ一覧</p>
+			<p>お問い合わせ一覧&nbsp;(サイト利用者)</p>
 		</div>
 		<div id="textZone">
 			<?php

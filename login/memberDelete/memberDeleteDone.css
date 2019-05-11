@@ -208,8 +208,7 @@ span {
     border-left: solid 3px #53a756;
     font-size: 18px;
     font-weight: bold;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 15px;
 }
 #logoutButton:hover {
     background: #90ee90;

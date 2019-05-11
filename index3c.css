@@ -638,6 +638,8 @@ p {
     color: #292929;
     font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
 }
-body {
+body,html {
   box-sizing : border-box;
+  max-width:100%;
+  overflow:hidden;
 }
