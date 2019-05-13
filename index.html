@@ -252,7 +252,7 @@ $(function() {
 $(function(){
         $('a[href^="#"]').click(function() {
   
-          var speed = 400; 
+          var speed = 600; 
           var href= $(this).attr("href");
           var target = $(href == "#" || href == "" ? 'html' : href);
           var position = target.offset().top;
@@ -278,7 +278,7 @@ function pageTop() {
         document.documentElement.scrollTop  = top / 1.25;
         document.documentElement.scrollLeft = left / 1.25;
 
-        setTimeout("pageTop()", 40);
+        setTimeout("pageTop()", 80);
     }
 }	
 </script> 

@@ -32,9 +32,9 @@ li {
 }
 .animation {
     position: absolute;
-    width: 150px;
+    width: 165px;
     height: 40px;
-    top: 50%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: lodanimetion 1500ms ease-out forwards infinite;
@@ -121,7 +121,7 @@ header {
     z-index: 9999;/*最前面に*/
     width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
     max-width: 200px;/*最大幅（調整してください）*/
-    height: 53%;
+    height: 32%;
     background: #fff;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     transform: translateX(105%);/*右に隠しておく*/
