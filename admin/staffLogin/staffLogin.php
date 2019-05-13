@@ -50,7 +50,7 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 				管理者名<br/>
 				<input type="text" name="name" autocomplete="off" required><br/><br/> パスワードを入力してください(半角英数字をそれぞれ1種類以上含む8文字以上)
 				<br/>
-				<input type="password" name="password" required><br/>
+				<input type="password" name="password" autocomplete="off" required><br/>
 				<br/>
 				<input type="submit" id="loginButton" value="ログイン">
 			</form>

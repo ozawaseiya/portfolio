@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -51,10 +51,10 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == true ) {
 				require_once( '../../common/common.php' );
 
 				$post = sanitize( $_POST );
-				$name = $post[ 'name' ];
-				$password = $post[ 'password' ];
+				$staffname = $post[ 'name' ];
+				$staffpassword = $post[ 'password' ];
 
-				$password = md5( $password );
+				$staffpassword = md5( $staffpassword );
 
 				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
 				$user = 'aichi1990_shop';
@@ -62,10 +62,10 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == true ) {
 				$dbh = new PDO( $dsn, $user, $password );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-				$sql = 'SELECT code,name,password FROM dat_staff WHERE name=? OR password=?';
+				$sql = 'SELECT code,name FROM dat_staff WHERE name=? AND password=?';
 				$stmt = $dbh->prepare( $sql );
-				$data[] = $name;
-				$data[] = $password;
+				$data[] = $staffname;
+				$data[] = $staffpassword;
 				$stmt->execute( $data );
 
 				$dbh = null;
