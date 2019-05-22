@@ -54,61 +54,101 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			<?php
 
 			try {
-
-				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
-				$user = 'aichi1990_shop';
-				$password = 'a31706105';
-				$dbh = new PDO( $dsn, $user, $password );
+				$dbh = new PDO( 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8', 'aichi1990_shop', 'a31706105' );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+				global $dbh;
+				// GETをもちいて現在のページ数を取得
+				if ( isset( $_GET[ 'page' ] ) ) {
+					$page = ( int )$_GET[ 'page' ];
+				} else {
+					$page = 1;
+				}
 
+				// 開始ポジションを計算
+				if ( $page > 1 ) {
+					// ２ページ目の場合は、「(2 × 10) - 10 = 10」
+					$start = ( $page * 10 ) - 10;
+				} else {
+					$start = 0;
+					global $start;
+				}
 
-				$sql = 'SELECT * FROM dat_order WHERE 1';
+				$sql = "SELECT * FROM dat_order LIMIT {$start}, 10";
 				$stmt = $dbh->prepare( $sql );
 				$stmt->execute();
 
-				$dbh = null;
+
+				// dat_orderテーブルのデータ件数を取得
+				$pagenum = $dbh->prepare( "
+	SELECT COUNT(*) 
+	FROM dat_order
+" );
+				$pagenum->execute();
+				$pagenum = $pagenum->fetchColumn();
+				//var_dump( $pagenum );
+				global $pagenum;
+				$max = $pagenum;
 
 				print '<form method="post" action="orderBranch.php">';
-				while ( true ) {
-					$rec = $stmt->fetch( PDO::FETCH_ASSOC );
-					if ( $rec == false ) {
+				for ( $i = 0; $i < $max; $i++ ) {
+
+					$orders = $stmt->fetch( PDO::FETCH_ASSOC );
+					if ( $orders == false ) {
 						break;
 					}
 					print '<br/><br/>';
-					print '<input type="radio" name="code" value="' . $rec[ 'code' ] . '">';
-					print '注文番号:' . $rec[ 'code' ] . '<br/>';
-					print '①注文日:' . $rec[ 'date' ] . '<br/>';
-					print '②会員番号:' . $rec[ 'membercode' ] . '<br/>';
-					print '③会員氏名:' . $rec[ 'name' ] . '<br/>';
-					print '④配達' . $rec[ 'arrival' ] . '<br/>';
-					print '⑤電話番号:' . $rec[ 'tel' ] . '<br/>';
-					print '⑥メールアドレス:' . $rec[ 'email' ] . '<br/>';
-					$postal = $rec[ 'postal1' ] . $rec[ 'postal2' ];
+					print '<input type="radio" name="code" value="' . $orders[ 'code' ] . '">';
+					print '注文番号:' . $orders[ 'code' ] . '<br/>';
+					print '①注文日:' . $orders[ 'date' ] . '<br/>';
+					print '②会員番号:' . $orders[ 'membercode' ] . '<br/>';
+					print '③会員氏名:' . $orders[ 'name' ] . '<br/>';
+					print '④配達' . $orders[ 'arrival' ] . '<br/>';
+					print '⑤電話番号:' . $orders[ 'tel' ] . '<br/>';
+					print '⑥メールアドレス:' . $orders[ 'email' ] . '<br/>';
+					$postal = $orders[ 'postal1' ] . $orders[ 'postal2' ];
 					print '⑦郵便番号:' . $postal . '<br/>';
-					print '⑧都道府県:' . $rec[ 'prefecture' ] . '<br/>';
-					print '⑨住所:' . $rec[ 'address' ] . '<br/>';
-					print '⑩支払い方法:' . $rec[ 'payment' ] . '<br/>';
-					if ( $rec[ 'cardnumber' ] == 0 ) {
+					print '⑧都道府県:' . $orders[ 'prefecture' ] . '<br/>';
+					print '⑨住所:' . $orders[ 'address' ] . '<br/>';
+					print '⑩支払い方法:' . $orders[ 'payment' ] . '<br/>';
+					if ( $orders[ 'cardnumber' ] == 0 ) {
 						$cardnumber = 'なし';
 						print '⑪カード番号:' . $cardnumber;
 					} else {
-						print '⑪カード番号:' . $rec[ 'cardnumber' ];
+						print '⑪カード番号:' . $orders[ 'cardnumber' ];
 					}
 				}
 
+				// ページネーションの数を取得
+				$pagination = ceil( $pagenum / 10 );
+				global $pagination;
 				print '<br/><br/>';
-				print '<div id="buttonZone">';
-				print '<input type="submit" id="button1" name="detail" value="詳細を見る">';
-				print '<input type="submit" id="button2" name="add" value="注文を追加する">';
-				print '<input type="submit" id="button3" name="delete" value="注文を削除する">';
-				print '</div>';
-				print '</form>';
+				?>
 
+			<?php for ($x=1; $x <= $pagination ; $x++) { ?>
+			<a href="?page=<?php print $x; ?>">
+				<?php print $x.'&nbsp;&nbsp;'; ?>
+			</a>
+			<?php } ?>
+
+			<?php
+			print '<br/>';
+			print '全件数' . $pagenum . '件&nbsp;(各10件ずつ表示)'; 
+			$dbh = null;
+			?>
+
+			<?php
+			print '<br/><br/>';
+			print '
+				<div id="buttonZone">';
+			print '<input type="submit" id="button1" name="detail" value="詳細を見る">';
+			print '<input type="submit" id="button2" name="add" value="注文を追加する">';
+			print '<input type="submit" id="button3" name="delete" value="注文を削除する">';
+			print '</div>';
+			print '</form>';
 			} catch ( Exception $e ) {
 				print 'ただいま障害により大変ご迷惑をおかけしております。';
 				exit();
 			}
-
 			?>
 			<br/>
 			<a href="../orderUpload/orderProductCartLook.php">現在の買い物かごの中を見る</a>
