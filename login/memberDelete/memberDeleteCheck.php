@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -118,7 +118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				$memberemail1 = $post[ 'email1' ];
 				$memberpassword = $post[ 'password' ];
 
-				$memberpassword = md5( $memberpassword );
+				$memberpassword = crypt($memberpassword,PASSWORD_DEFAULT);
 
 				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
 				$user = 'aichi1990_shop';

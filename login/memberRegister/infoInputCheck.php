@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -266,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		<?php
 		if ( $okflg == true ) {
-			$memberpassword = md5( $memberpassword );
+			$memberpassword = crypt($memberpassword,PASSWORD_DEFAULT);
 			$memberkanji = $memberseikanji .= $membermeikanji;
 			$memberfurigana = $memberseifurigana .= $membermeifurigana;
 			print '<form method="post" action="infoInputDone.php">';

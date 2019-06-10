@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -55,7 +55,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == true ) {
 				$staffname = $post[ 'name' ];
 				$staffpass = $post[ 'password' ];
 
-				$staffpass = md5( $staffpass );
+				$staffpass = crypt($staffpass,PASSWORD_DEFAULT);
 
 				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
 				$user = 'aichi1990_shop';

@@ -29,7 +29,7 @@ $memberpostal1 = $post[ 'postal1' ];
 $memberpostal2 = $post[ 'postal2' ];
 $memberprefecture = $post[ 'prefecture' ];
 $memberaddress = $post[ 'address' ];
-$memberpassword = $post[ 'password' ];
+$memberpassword = $post['password'];
 
 $okflg = true;
 
@@ -209,7 +209,7 @@ $okflg = true;
 			</div>
 			<?php
 			if ( $okflg == true ) {
-				$memberpassword = md5( $memberpassword );
+				$memberpassword = crypt($memberpassword,PASSWORD_DEFAULT);
 				$memberkanji = $memberseikanji .= $membermeikanji;
 				$memberfurigana = $memberseifurigana .= $membermeifurigana;
 				print '<form method="post" action="memberUploadDone.php">';

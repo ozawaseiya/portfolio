@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 header( 'Expires:' );
 header( 'Cache-Control:' );
@@ -52,9 +52,9 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == true ) {
 
 				$post = sanitize( $_POST );
 				$staffname = $post[ 'name' ];
-				$staffpassword = $post[ 'password' ];
+				$staffpassword = $post['password'];
 
-				$staffpassword = md5( $staffpassword );
+				$staffpassword = crypt($staffpassword,PASSWORD_DEFAULT);
 
 				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
 				$user = 'aichi1990_shop';
