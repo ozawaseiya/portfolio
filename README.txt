@@ -1,7 +1,6 @@
 ポートフォーリオサイト
 
 サイトのURL： https://aichi1990.xsrv.jp
-ソースコードの保存先　GitHub（現在公開設定）： https://github.com/ozawaseiya/portfolio.git
 
 # portfolio(name of repository)
 1.ポートフォーリオページ（Profile[自己紹介と経歴],Favorite[趣味と興味],Skill[このWebシステムを作成するのに使用した技能],Works[作成した2つのWebシステムの紹介]）
