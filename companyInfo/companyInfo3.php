@@ -153,11 +153,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</tr>
 					<tr>
 						<td>代表者</td>
-						<td>尾澤政哉</td>
+						<td>サイト制作者</td>
 					</tr>
 					<tr>
 						<td>役員</td>
-						<td>代表取締役：尾澤政哉　専務取締役：城所隆　取締役：日比力　監査役：田中一樹</td>
+						<td>代表取締役：サイト制作者　専務取締役：林隆　取締役：巻力　監査役：田中賢</td>
 					</tr>
 					<tr>
 						<td>取引銀行</td>
