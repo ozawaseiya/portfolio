@@ -2,16 +2,21 @@
 
 サイトのURL： https://aichi1990.xsrv.jp
 
+# Title ポートフォーリオサイト
+PHPで作成した自己紹介ページとローカルECサイトとECサイト管理サイト
+サイトのURL： https://aichi1990.xsrv.jp
+ソースコードの保存先　GitHub： https://github.com/ozawaseiya/portfolio.git
+
 # portfolio(name of repository)
 1.ポートフォーリオページ（Profile[自己紹介と経歴],Favorite[趣味と興味],Skill[このWebシステムを作成するのに使用した技能],Works[作成した2つのWebシステムの紹介]）
 2.東三河幸せ宅配便サイト: 愛知県東三河地域に居住している仕事や家事、介護等で忙しい５０代以上の主婦を対象としたローカルショッピングサイト
 3.東三河幸せ宅配便管理サイト: ショッピングサイト運営者用の管理サイトを想定して作成されており、サイト経由の注文内容、お客様からの電話やメールで受け取ったご注文内容などをサイト運営者がご自身で管理できるサイト
 
 # Dependency
-Photoshop2019, Illustrator2019, Dreamweaver2019, HTML5, CSS3, Javascript, PHP ver-7.2.14, MYSQL ver-5.7.16
+Photoshop2019, Illustrator2019, HTML5, CSS3, Javascript(jQuery), PHP7.2, MySQL5.7, XAMPP
 
 # Setup
-phpmyadmin ver-4.4.15.10, Xserver, FileZilla(FTP)
+Dreamweaver, phpmyadmin ver-4.4.15.10, Xserver, Github
 
 # Usage
 Webシステム機能一覧
@@ -26,7 +31,6 @@ Copyright (c) 2019 Seiya Ozawa
 This software is released under the MIT License, see LICENSE.
 https://opensource.org/licenses/mit-license.php
 
-
 # Authors
 谷藤賢一,インターネットアカデミーインストラクター
 
@@ -36,3 +40,4 @@ https://opensource.org/licenses/mit-license.php
 　　　 ：Qiita（Webエンジニア等が主に参考にする情報サイト）　https://qiita.com/
 参考教材：インターネットアカデミーテキスト
 参考図書：「気づけばプロ並みPHP　改訂版　ゼロから作れる人になる！」谷藤賢一著　リックテレコム社
+
