@@ -13,6 +13,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 	print '<br/>';
 }
 ?>
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -54,23 +55,32 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			require_once( '../../../common/common.php' );
 
 			$post = sanitize( $_POST );
-			$productname = $_POST[ 'productname' ];
-			$companyname = $_POST[ 'companyname' ];
-			$productprice = $_POST[ 'price' ];
+			$productname = $post[ 'productname' ];
+			$companyname = $post[ 'companyname' ];
+			$productprice = $post[ 'price' ];
 			$productimage = $_FILES[ 'image' ];
 			$productimagecart = $_FILES[ 'imagecart' ];
 			$rankingimage = $_FILES[ 'rankingimage' ];
 
-			if ( $productname == '' ) {
+			error_reporting(0);
+
+			$productname = utf8_decode($productname);
+			$companyname = utf8_decode($companyname);
+
+			$okflg = true;
+
+			if ( isset( $post[ 'productname' ] ) && $post[ 'productname' ] == NULL ) {
 				print '商品名が入力されていません。<br/>';
+				$okflg = false;
 			} else {
 				print '商品名：';
 				print $productname;
 				print '<br/>';
 			}
 
-			if ( $companyname == '' ) {
+			if ( isset( $post[ 'companyname' ] ) && $post[ 'companyname' ] == NULL ) {
 				print '販売店名が入力されていません。<br/>';
+				$okflg = false;
 			} else {
 				print '販売店名：';
 				print $companyname;
@@ -79,6 +89,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 
 			if ( preg_match( '/\A[0-9]+\z/', $productprice ) == 0 ) {
 				print '価格を正しく入力してください。<br/>';
+				$okflg = false;
 			} else {
 				print '価格：';
 				print $productprice;

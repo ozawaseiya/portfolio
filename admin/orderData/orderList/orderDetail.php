@@ -58,9 +58,9 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 				$ordercode = $_GET[ 'code' ];
 				$total = 0;
 
-				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
-				$user = 'aichi1990_shop';
-				$password = 'a31706105';
+				$dsn = 'mysql:host=portfolio-db.clfmlox1pztr.ap-northeast-1.rds.amazonaws.com;dbname=portfolio;charset=utf8';
+						$user = 'portfolio';
+						$password = 'portfolio2020';
 				$dbh = new PDO( $dsn, $user, $password );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
@@ -91,6 +91,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 					$price = $orderprice * $orderquantity;
 					$data = array( $price );
 					global $data;
+					$totalprice = 0;
 					$totalprice += array_sum( $data );
 					$total = $totalprice + 300;
 					print '</div>';

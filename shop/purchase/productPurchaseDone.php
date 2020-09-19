@@ -11,13 +11,7 @@ if ( isset( $_SESSION[ 'member_login' ] ) == true ) {
 ?>
 <!doctype html>
 <html lang="ja">
-<head><!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WN5NLKS');</script>
-<!-- End Google Tag Manager -->
+<head> 
 	<meta charset="UTF-8N">
 	<title>ご注文完了画面</title>
 	<link href="productPurchaseDone.css" rel="stylesheet" type="text/css">
@@ -25,10 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</script>
 </head>
 
-<body><!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN5NLKS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body> 
 	<header>
 		<div id="headerInner">
 			<a href="../../index/index.php"><img src="../../common/logo.png" alt="東三河幸せ宅配便" id="mainPhoto"></a>
@@ -131,15 +122,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				$quantity = $_SESSION[ 'cnt' ];
 				$max = count( $cart );
 
-				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
-				$user = 'aichi1990_shop';
-				$password = 'a31706105';
+				$dsn = 'mysql:host=portfolio-db.clfmlox1pztr.ap-northeast-1.rds.amazonaws.com;dbname=portfolio;charset=utf8';
+				$user = 'portfolio';
+				$password = 'portfolio2020';
 				$dbh = new PDO( $dsn, $user, $password );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 				print $name . '様<br/><br/>';
 				print 'ご注文ありがとうございました。<br/>';
-				print $email . 'に確認メールを送付しましたのでご確認ください。<br/>';
+				print $email . 'に確認メールを送付しましたのでご確認ください。（場合によっては届かない場合があります。）<br/>';
 				print '商品は以下の住所に発送させていただきます。<br/>';
 				print $postal1 . '-' . $postal2 . '&nbsp;&nbsp;';
 				print $prefecture . ':';
@@ -234,6 +225,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				$subject = "～東三河幸せ宅配便～ご注文ありがとうございます";
                                 $subject .= ":".date('Y/m/d');
 				$content = $name;
+				mb_language("japanese");
+                mb_internal_encoding("UTF-8");
 
 				$content .= "様";
 				$content .= "\n\nご注文ありがとうございます。";

@@ -54,7 +54,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			<?php
 
 			try {
-				$dbh = new PDO( 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8', 'aichi1990_shop', 'a31706105' );
+				$dbh = new PDO( 'mysql:dbname=portfolio;host=portfolio-db.clfmlox1pztr.ap-northeast-1.rds.amazonaws.com;charset=utf8', 'portfolio', 'portfolio2020' );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 				global $dbh;
 				// GETをもちいて現在のページ数を取得
@@ -79,10 +79,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 
 
 				// dat_orderテーブルのデータ件数を取得
-				$pagenum = $dbh->prepare( "
-	SELECT COUNT(*) 
-	FROM dat_order
-" );
+				$pagenum = $dbh->prepare( "SELECT COUNT(*) FROM dat_order" );
 				$pagenum->execute();
 				$pagenum = $pagenum->fetchColumn();
 				//var_dump( $pagenum );
@@ -125,10 +122,13 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 				?>
 
 			<?php for ($x=1; $x <= $pagination ; $x++) { ?>
-			<a href="?page=<?php print $x; ?>">
+			<a href="?page=<?php print $x; ?>" id="pagenation">
 				<?php print $x.'&nbsp;&nbsp;'; ?>
 			</a>
+
 			<?php } ?>
+
+			
 
 			<?php
 			print '<br/>';

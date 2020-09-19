@@ -49,7 +49,7 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 			<p>商品追加</p>
 		</div>
 		<div id="inputBox">
-			<form method="post" action="productAddCheck.php" enctype="multipart/form-data">
+			<form enctype="multipart/form-data" method="post" action="productAddCheck.php">
 				商品名を入力してください<br/>
 				<input type="text" class="text" name="productname" style="width:200px" required><br/><br/> 販売店名を入力してください
 				<br/>

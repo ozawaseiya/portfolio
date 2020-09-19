@@ -29,6 +29,7 @@ li {
     left: 0px;
     background: #000;
     z-index: 9999;
+    -webkit-overflow-scrolling:touch;
 }
 .animation {
     position: absolute;
@@ -38,6 +39,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: lodanimetion 1500ms ease-out forwards infinite;
+    -webkit-overflow-scrolling:touch;
 }
 @keyframes lodanimetion {
  from, to {
@@ -92,6 +94,7 @@ header {
     display: block;
     content: '';
     cursor: pointer;
+    -webkit-overflow-scrolling:touch;
 }
 #navOpen span:before {
     bottom: -8px;
@@ -111,6 +114,7 @@ header {
     background: black;
     opacity: 0;
     transition: .3s ease-in-out;
+    -webkit-overflow-scrolling:touch;
 }
 /*中身*/
 #navContent {
@@ -125,6 +129,7 @@ header {
     background: #fff;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     transform: translateX(105%);/*右に隠しておく*/
+    -webkit-overflow-scrolling:touch;
 }
 /*チェックが入ったらもろもろ表示*/
 #navInput:checked ~ #navClose {
@@ -642,4 +647,5 @@ body,html {
   box-sizing : border-box;
   max-width:100%;
   overflow:hidden;
+  -webkit-overflow-scrolling:touch;
 }

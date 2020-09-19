@@ -62,9 +62,9 @@ if ( isset( $_SESSION[ 'staff_login' ] ) == false ) {
 				$contactemail1 = $post[ 'email1' ];
 				$contactinquiry = $post[ 'inquiry' ];
 
-				$dsn = 'mysql:dbname=aichi1990_shop;host=mysql7075.xserver.jp;charset=utf8';
-				$user = 'aichi1990_shop';
-				$password = 'a31706105';
+				$dsn = 'mysql:host=portfolio-db.clfmlox1pztr.ap-northeast-1.rds.amazonaws.com;dbname=portfolio;charset=utf8';
+						$user = 'portfolio';
+						$password = 'portfolio2020';
 				$dbh = new PDO( $dsn, $user, $password );
 				$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 

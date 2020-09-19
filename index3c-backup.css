@@ -18,7 +18,7 @@ img {
 li {
     list-style-type: none;
 }
-#hamburgar {
+#menu {
     display: none;
 }
 .loading {
@@ -32,9 +32,9 @@ li {
 }
 .animation {
     position: absolute;
-    width: 300px;
-    height: 80px;
-    top: 50%;
+    width: 160px;
+    height: 40px;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: lodanimetion 1500ms ease-out forwards infinite;
@@ -43,82 +43,162 @@ li {
  from, to {
  opacity: 0.3;
 }
- 50% {
+ 60% {
  opacity:1;
 }
 }
 .animation img {
+    max-width: 90%;
+    max-height: 90%;
     float: left;
     filter: invert(100%);
 }
 .animation p {
     float: right;
     color: #bdbdbd;
-    margin-top: 20px;
-    font-size: 30px;
+    margin-top: 5px;
+    font-size: 15px;
 }
 header {
     width: 100%;
-    height: 200px;
+    height: 100px;
+}
+#hamburgar {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+#navDrawer {
+}
+/*チェックボックス等は非表示に*/
+.navUnshown {
+    display: none;
+}
+/*アイコンのスペース*/
+#navOpen {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+}
+/*ハンバーガーアイコンをCSSだけで表現*/
+#navOpen span, #navOpen span:before, #navOpen span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+#navOpen span:before {
+    bottom: -8px;
+}
+#navOpen span:after {
+    bottom: -16px;
+}
+/*閉じる用の薄黒カバー*/
+#navClose {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+/*中身*/
+#navContent {
+    overflow: hidden;
+    position: fixed;
+    top: 105px;
+    right: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 200px;/*最大幅（調整してください）*/
+    height: 55%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    transform: translateX(105%);/*右に隠しておく*/
+}
+/*チェックが入ったらもろもろ表示*/
+#navInput:checked ~ #navClose {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+#navInput:checked ~ #navContent {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 #titleBox {
     width: 100%;
-    height: 150px;
+    height: 75px;
 }
 #mainTitle {
-    width: 100%;
-    max-width: 420px;
-    height: 85px;
-    margin-left: 120px;
-    margin-top: 50px;
+    width: 210px;
+    height: 35px;
+    margin-left: 40px;
+    margin-top: 25px;
 }
 #companyLogo {
     float: left;
-    margin-top: 5px;
-    margin-right: 15px;
 }
 #companyLogo img {
+    width: 80%;
+    height: 80%;
+    z-index: 0;
     transform: rotate(360deg);
     animation: rotate_anime 20s;
 }
 @keyframes rotate_anime {
  0% {
  transform:rotate(0deg);/* アニメーションの進みが0%の時の状態 */
+ -webkit-transform: rotate(0deg);
 }
  100% {
  transform:rotate(360deg);/* アニメーションの進みが100%の時の状態 */
+ -webkit-transform: rotate(360deg);
 }
+}
+#title1 {
+    z-index: 1;
 }
 #title2 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    z-index: 1;
 }
 #title1 p {
-    font-size: 28px;
+    font-size: 14px;
     color: #292929;
     font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
 }
 #title2 p {
-    font-size: 28px;
+    font-size: 14px;
     color: #292929;
     font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
 }
-#menu {
-    width: 100%;
-    max-width: 450px;
-    height: 40px;
-    float: right;
-    margin-right: 60px;
+#menu1 {
+    width: 100px;
+    height: 20px;
 }
-#menu p {
+#menu1 p {
     float: left;
-    font-size: 23px;
-    margin-right: 40px;
+    font-size: 24px;
+    margin-left: 60px;
+    margin-top: 25px;
     color: #333;
     font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
 }
 #contents {
     width: 100%;
-    height: 4900px;
+    height: auto;
+    min-height: 3800px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -133,29 +213,33 @@ header {
 }
 #logo {
     width: 100%;
-    height: 470px;
+    max-width: 480px;
+    height: 100%;
+    min-height: 200px;
     margin-right: auto;
     margin-left: auto;
     background-repeat: no-repeat;
 }
 #profileBefore {
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 #profile {
     width: 100%;
-    height: 410px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 250px;
     margin-right: auto;
     margin-left: auto;
 }
 #profileTitle {
-    width: 85px;
-    height: 50px;
+    width: 40px;
+    height: 25px;
     margin-right: auto;
     margin-left: auto;
 }
 #profileTitle p {
-    font-size: 25px;
+    font-size: 14px;
     color: #333;
     font-weight: bold;
     margin-right: auto;
@@ -163,9 +247,10 @@ header {
 }
 #profileInfo {
     width: 100%;
-    max-width: 1000px;
-    height: 360px;
-    margin-bottom: 100px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 240px;
+    margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
     border-top: solid 2px #171b1f;
@@ -173,9 +258,10 @@ header {
 }
 #profileData {
     width: 100%;
-    max-width: 500px;
-    height: 100px;
-    margin-top: 50px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 210px;
+    margin-top: 25px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -183,59 +269,45 @@ header {
     color: #292929;
 }
 .info {
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 8px;
 }
 .sentence1 {
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 8px;
 }
 .sentence2 {
-    margin-top: 28px;
+    margin-top: 12px;
 }
 #frame1 {
     width: 100%;
-    height: 400px;
-    margin-top: 50px;
+    height: 160px;
+    margin-top: 25px;
     margin-right: auto;
     margin-left: auto;
-    background-attachment: fixed;
-    background-image: url("portfolioPhoto/favorite1.jpg");
+    background-image: url("portfolioPhoto/favorite3.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-#frame1::before {
-    background: inherit;
-    content: '';
-    filter: blur(1px);
-    filter: grayscale(50%);
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
 }
 #favoriteBefore {
     width: 100%;
-    height: 100px;
+    height: 50px;
     margin-top: 5px;
 }
 #favorite {
     width: 100%;
-    height: 740px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 860px;
     margin-right: auto;
     margin-left: auto;
 }
 #favoriteTitle {
-    width: 100px;
-    height: 50px;
+    width: 50px;
+    height: 25px;
     margin-right: auto;
     margin-left: auto;
 }
 #favoriteTitle p {
-    font-size: 25px;
+    font-size: 14px;
     color: #333;
     font-weight: bold;
     margin-right: auto;
@@ -243,9 +315,10 @@ header {
 }
 #favoriteInfo {
     width: 100%;
-    max-width: 1000px;
-    height: 655px;
-    margin-bottom: 100px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 805px;
+    margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
     border-top: solid 2px #171b1f;
@@ -253,9 +326,10 @@ header {
 }
 #favoriteData {
     width: 100%;
-    max-width: 565px;
-    height: 210px;
-    margin-top: 60px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 145px;
+    margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -264,88 +338,79 @@ header {
 }
 #favoritePhoto {
     width: 100%;
-    max-width: 850px;
-    height: 320px;
+    max-width: 300px;
+    height: 100%;
+    min-height: 580px;
     margin-right: auto;
     margin-left: auto;
 }
 #kolkata {
-    float: left;
+    width: 100%;
     text-align: center;
+    max-width: 300px;
 }
 #kolkata img {
     width: 100%;
-}
-#kolkata img:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    -ms-filter: "alpha( opacity=80 )";
+    max-width: 300px;
 }
 #kolkata p {
     color: #333;
+    font-size: 12px;
     font-weight: bold;
-    font-size: 16px;
 }
 #tokaido {
-    float: right;
+    width: 100%;
     text-align: center;
+    max-width: 300px;
 }
 #tokaido img {
     width: 100%;
-}
-#tokaido img:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    -ms-filter: "alpha( opacity=80 )";
+    max-width: 300px;
 }
 #tokaido p {
     color: #333;
+    font-size: 12px;
     font-weight: bold;
-    font-size: 16px;
+}
+#favoritePhoto p {
+    margin-top: 14px;
+    color: #333;
+}
+#favoritePhoto img {
+    margin-top: 10px;
 }
 #frame2 {
     width: 100%;
-    height: 400px;
+    height: 160px;
     margin-top: 25px;
     margin-right: auto;
     margin-left: auto;
-    background-attachment: fixed;
-    background-image: url("portfolioPhoto/skill1.jpg");
+    background-image: url("portfolioPhoto/skill3.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-#frame2::before {
-    background: inherit;
-    content: '';
-    filter: blur(1px);
-    filter: grayscale(50%);
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
 }
 #skillBefore {
     width: 100%;
-    height: 100px;
+    height: 50px;
     margin-top: 5px;
 }
 #skill {
     width: 100%;
-    height: 670px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 440px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 15px;
 }
 #skillTitle {
-    width: 65px;
-    height: 50px;
+    width: 30px;
+    height: 20px;
     margin-right: auto;
     margin-left: auto;
 }
 #skillTitle p {
-    font-size: 25px;
+    font-size: 14px;
     color: #333;
     font-weight: bold;
     margin-right: auto;
@@ -353,76 +418,75 @@ header {
 }
 #skillInfo {
     width: 100%;
-    max-width: 1000px;
-    height: 580px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 230px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 20px;
     border-top: solid 2px #171b1f;
     border-bottom: solid 2px #171b1f;
 }
 #skillData {
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
-    max-width: 645px;
-    height: 580px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 440px;
     margin-right: auto;
     margin-left: auto;
 }
-#skilData p {
+#skillDataMessage {
+    width: 100%;
+    max-width: 310px;
+    word-break: break-all;
+    margin-right: auto;
+    margin-left: auto;
+}
+#skillData p {
     color: #292929;
 }
 .boldTitle1 {
     font-weight: bold;
+    font-size: 12px;
     display: inline;
 }
 .boldTitle2 {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     display: inline;
 }
 #frame3 {
     width: 100%;
-    height: 400px;
-    margin-top: 50px;
+    height: 160px;
+    margin-top: 25px;
     margin-right: auto;
     margin-left: auto;
-    background-attachment: fixed;
-    background-image: url("portfolioPhoto/works1.jpg");
+    background-image: url("portfolioPhoto/works3.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-#frame3::before {
-    background: inherit;
-    content: '';
-    filter: blur(1px);
-    filter: grayscale(50%);
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
 }
 #worksBefore {
     width: 100%;
-    height: 100px;
+    height: 40px;
     margin-top: 5px;
 }
 #works {
     width: 100%;
-    height: 780px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 1060px;
     margin-right: auto;
     margin-left: auto;
 }
 #worksTitle {
-    width: 80px;
-    height: 50px;
+    width: 30px;
+    height: 20px;
     margin-right: auto;
     margin-left: auto;
 }
 #worksTitle p {
-    font-size: 25px;
+    font-size: 14px;
     color: #333;
     font-weight: bold;
     margin-right: auto;
@@ -430,9 +494,10 @@ header {
 }
 #worksInfo {
     width: 100%;
-    max-width: 1000px;
-    height: 750px;
-    padding-top: 50px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 960px;
+    padding-top: 30px;
     margin-right: auto;
     margin-left: auto;
     border-top: solid 2px #171b1f;
@@ -440,37 +505,35 @@ header {
 }
 #worksSentence {
     width: 100%;
-    max-width: 750px;
-    height: 350px;
-    margin-right: auto;
-    margin-left: auto;
-}
-#worksSentenceTitle {
-    width: 100%;
-    max-width: 675px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 400px;
     margin-right: auto;
     margin-left: auto;
 }
 #workSentence1 {
     width: 100%;
-    max-width: 750px;
-    height: 140px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 140px;
     margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
 }
 #workSentence2 {
     width: 100%;
-    max-width: 750px;
-    height: 140px;
-    margin-top: 30px;
+    max-width: 310px;
+    height: 100%;
+    min-height: 140px;
+    margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
 }
 #worksData {
+    height: 100%;
+    min-height: 545px;
     width: 100%;
-    max-width: 850px;
-    height: 300px;
+    max-width: 310px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -479,34 +542,47 @@ header {
 }
 #productscreen {
     width: 100%;
-    max-width: 400px;
-    height: 240px;
-    margin-top: 70px;
-    float: left;
+    max-width: 300px;
+    height: 100%;
+    min-height: 240px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+}
+#productscreen img {
+    width: 100%;
+    max-width: 300px;
 }
 #productscreen p {
     width: 100%;
-    max-width: 200px;
+    max-width: 160px;
     color: #333;
+    font-size: 14px;
     font-weight: bold;
-    font-size: 16px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
 }
 #adminscreen {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     height: 240px;
-    margin-top: 70px;
-    float: right;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#adminscreen img {
+    width: 100%;
+    max-width: 400px;
 }
 #adminscreen p {
     width: 100%;
-    max-width: 240px;
+    max-width: 190px;
+    margin-top: 10px;
     color: #333;
+    font-size: 14px;
     font-weight: bold;
-    font-size: 16px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
@@ -515,26 +591,23 @@ footer {
     background-color: #f7f7f7;
     height: 120px;
     width: 100%;
-    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
-    padding-top: 60px;
+    padding-top: 20px;
     clear: both;
 }
 #footerInner {
     width: 100%;
-    max-width: 720px;
-    height: 50px;
+    max-width: 320px;
+    height: 100px;
     margin-right: auto;
     margin-left: auto;
 }
 #footerInner p {
-    float: left;
     color: #292929;
-    margin-top: 25px;
-    margin-right: 30px;
-    font: bold;
+    margin-right: 10px;
+    font-weight: bold;
 }
 #contact {
     font-weight: bold;
@@ -543,10 +616,10 @@ footer {
     float: right;
     clear: both;
     font-weight: bold;
-    margin-right: 80px;
-    font-size: 25px;
+    margin-right: 20px;
+    font-size: 10px;
 }
-#topBack p {
+#topBack {
     color: #292929;
 }
 a {
@@ -561,7 +634,12 @@ a:hover {
     transform: scale(1.1);
 }
 p {
-    font-size: 18px;
+    font-size: 14px;
     color: #292929;
     font-family: "YuGothic", "Yu Gothic", "Meiryo", "ヒラギノ角ゴ", "sans-serif";
+}
+body,html {
+  box-sizing : border-box;
+  max-width:100%;
+  overflow:hidden;
 }
