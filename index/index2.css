@@ -451,5 +451,7 @@ footer {
 body,html {
     background-color: #fffaf0;
     max-width:100%;
+    /*
     overflow:hidden;
+    */
 }
