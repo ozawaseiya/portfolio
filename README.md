@@ -1,9 +1,12 @@
 # Title ポートフォーリオサイト
 1.自己紹介ページ
+
 2.ローカルECサイト
+
 3.ローカルECサイト管理サイト
 
 サイトのURL：https://portfolio.awsmikawa.com/portfolio/
+
 ソースコードの保存先　GitHub：https://github.com/ozawaseiya/portfolio
 
 # portfolio(name of repository)
@@ -35,7 +38,10 @@ https://opensource.org/licenses/mit-license.php
 
 # References
 参考URL：サントリーの健康食品・化粧品 サントリーウエルネスオンライン https://www.suntory- kenko.com/
-       ：アマゾン https://www.amazon.co.jp/
-　　　  ：Qiita（Webエンジニア等が主に参考にする情報サイト）　https://qiita.com/
+
+：アマゾン https://www.amazon.co.jp/
+
+：Qiita（Webエンジニア等が主に参考にする情報サイト）　https://qiita.com/
+
 参考図書：「気づけばプロ並みPHP　改訂版　ゼロから作れる人になる！」谷藤賢一著　リックテレコム社
 
